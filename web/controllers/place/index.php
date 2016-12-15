@@ -192,7 +192,12 @@ $app->match('/place/create', function () use ($app) {
 
 	$form = $form->add('name', 'text', array('required' => true));
 	$form = $form->add('address', 'text', array('required' => true));
-	$form = $form->add('type', 'text', array('required' => true));
+    $form = $form->add('type', 'choice', array(
+            'required' => true,
+            'choices' => array('Airport' => 'Airport', 'Attraction' => 'Attraction', 'Restaurant' => 'Restaurant'),
+            'expanded' => false,
+            'constraints' => new Assert\Choice(array_keys($options))
+        ));
 	$form = $form->add('description', 'textarea', array('required' => true));
 
 
@@ -259,13 +264,7 @@ $app->match('/place/edit/{id}', function ($id) use ($app) {
 
 	$form = $form->add('name', 'text', array('required' => true));
 	$form = $form->add('address', 'text', array('required' => true));
-	// $form = $form->add('type', 'text', array('required' => true));
-    $form = $form->add('type', 'choice', array(
-            'required' => true,
-            'choices' => array('Airport' => 'Airport', 'Restaurant' => 'Restaurant', 'Attraction' => 'Attraction'),
-            'expanded' => false,
-            'constraints' => new Assert\Choice(array_keys($options))
-        ));
+	$form = $form->add('type', 'text', array('required' => true));
 	$form = $form->add('description', 'textarea', array('required' => true));
 
 
