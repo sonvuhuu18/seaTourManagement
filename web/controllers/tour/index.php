@@ -255,10 +255,6 @@ $app->match('/tour/edit/{id}', function ($id) use ($app) {
 	$form = $form->add('no_days', 'text', array('required' => true));
 	$form = $form->add('price', 'text', array('required' => true));
 
-    $find_sql = "SELECT * FROM `place_in_tour` WHERE `tour_id = ?` ORDER BY `order_number` ASC, `day_number` ASC";
-    $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
-    
-
 
     $form = $form->getForm();
 

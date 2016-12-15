@@ -1,0 +1,91 @@
+{% extends 'ag_base/backend.html.twig' %}
+
+{% block container %}
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+
+        {% include 'menu.html.twig' with {'option': 'place_in_tour_create'} %}
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">                
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Create Place_in_tour
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                {% include 'ag_alerts.html.twig' %}
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        {{ form_start(form, {'method': 'POST'}) }}
+                            {{ form_errors(form) }}
+
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title"></h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+
+									<div class='form-group'>
+									    {{ form_label(form.place_id) }}
+									    {{ form_widget(form.place_id, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.tour_id) }}
+									    {{ form_widget(form.tour_id, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.order_number) }}
+									    {{ form_widget(form.order_number, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.day_number) }}
+									    {{ form_widget(form.day_number, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.start_time) }}
+									    {{ form_widget(form.start_time, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.stop_time) }}
+									    {{ form_widget(form.stop_time, { attr: { 'class': 'form-control' }}) }}
+									</div>
+
+									<div class='form-group'>
+									    {{ form_label(form.description) }}
+									    {{ form_widget(form.description, { attr: { 'class': 'form-control textarea', 'style': 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;' }}) }}
+									</div>
+
+                                                  
+
+                                </div><!-- /.box-body -->
+
+                                {{ form_rest(form) }}
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </div>
+
+                            </div><!-- /.box -->
+                        {{ form_end(form) }}
+
+
+                    </div>
+                </div>
+
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+{% endblock %}

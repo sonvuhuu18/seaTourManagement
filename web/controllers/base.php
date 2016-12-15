@@ -18,6 +18,7 @@ require_once __DIR__.'/../../src/app.php';
 require_once __DIR__.'/admin/index.php';
 require_once __DIR__.'/place/index.php';
 require_once __DIR__.'/place_image/index.php';
+require_once __DIR__.'/place_in_tour/index.php';
 require_once __DIR__.'/tour/index.php';
 require_once __DIR__.'/tour_date/index.php';
 require_once __DIR__.'/user/index.php';
